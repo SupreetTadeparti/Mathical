@@ -1,0 +1,130 @@
+:root {
+  --text: hsl(65, 33%, 93%);
+  --background: hsl(66, 33%, 6%);
+  --primary: hsl(246, 33%, 65%);
+  --secondary: hsl(66, 33%, 65%);
+  --accent: hsl(246, 33%, 55%);
+}
+
+*,
+*::before,
+*::after {
+  font-family: Inter, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body,
+.container {
+  height: 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 6fr 1fr;
+  background-color: var(--background);
+  width: 100%;
+}
+
+#magic-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#math-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  width: 100%;
+}
+
+#math-container > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
+  font-size: 1.4em;
+  color: white;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background 200ms;
+}
+
+#question {
+  letter-spacing: 5px;
+  font-size: 1.75em;
+  padding: 0 2em;
+}
+
+#answer {
+  aspect-ratio: 4;
+}
+
+#answer:focus {
+  outline: none;
+}
+
+#submit {
+  cursor: pointer;
+}
+
+#submit:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#beams-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#blobs-container {
+  position: fixed;
+  inset: 0;
+}
+
+#blobs {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.blob {
+  z-index: 5;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url(blob.svg);
+  background-size: contain;
+}
+
+#wand {
+  z-index: 100;
+}
+
+.blob-beam {
+  border-radius: 50%;
+  position: absolute;
+  width: 1em;
+  aspect-ratio: 1;
+  background-color: var(--secondary);
+}
+
+#score-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1em;
+  color: white;
+  font-weight: 500;
+  font-size: 1.75em;
+}
